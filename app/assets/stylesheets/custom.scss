@@ -1,0 +1,193 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+
+header {
+  .profile-pic {
+      position: relative;
+      top: -1px;
+      padding-right: 0px !important;
+      img {
+        width: 26px;
+        height: 26px;
+    }
+  }
+}
+
+
+/* navbar */
+.navbar-inner {
+  background: #474D57;
+  border-bottom: 1px solid #373D47;
+}
+
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* forms */
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#user_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+h3.page-title {
+  color: #333;
+  line-height: 1.5;
+  font-weight: normal;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.form-horizontal .control-label {
+  text-align: right;
+}
+
+.btn.btn-primary, .btn.btn-save, .btn.reply-btn {
+  color: #ffffff;
+  background-color: #446e9b;
+  border-color: #446e9b;
+}
+
+.form-actions {
+  padding: 17px 20px 18px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  background-color: whitesmoke;
+  border-top: 1px solid #e5e5e5;
+  padding-left: 17%;
+}
+
+.light, .description-block {
+  color: #888888;
+}
+
+.form-control {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.flash-container {
+  display: none;
+  cursor: pointer;
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.8;
+  z-index: 100;
+}
+
+.flash-container .flash-notice {
+  background: #49C;
+  padding: 10px;
+  text-shadow: 0 1px 1px #178;
+}
+
+label.control-label {
+  float: left;
+  width: 16.6666666667%;
+
+}

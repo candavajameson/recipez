@@ -1,0 +1,44 @@
+%h1 Recipez
+
+.row 
+	.col-sm-3.col-sm-offset-1
+		= image_tag avatar_icon(@recipe.user.email, 160), class: 'avatar s160 img-circle ', alt: ''
+		%h2= "#{@recipe.user.first_name} #{ @recipe.user.last_name}"
+
+	.col-sm-8
+		%h1= @recipe.title
+		- if @recipe.avatar?
+			= image_tag @recipe.avatar_url(400), class: 'avatar s400', alt: @recipe.title
+		
+		%hr
+		%h3 Description
+		%p= @recipe.desc
+		%hr
+		%h3 Ingredients
+		%p= @recipe.ingredients
+		%hr
+		%h3 Procedures
+		%p= @recipe.procedures
+
+		%br
+		%hr 
+			- if @recipe.reviews.count() > 0
+				%h1 Reviews
+				- @recipe.reviews.order(:created_at => :desc).each do |review|
+					.media
+						%a.media-left
+							= image_tag avatar_icon(review.user.email, 90), class: 'avatar s90 img-circle'
+							%br
+							%small= "#{review.user.first_name} #{review.user.last_name}"
+						.media-body
+							%h4.media-heading= review.title
+							%small= "#{time_ago_in_words(review.created_at)} ago."
+							%br
+							= review.message
+				%hr 
+				%br
+			- if user_signed_in?
+				%button.btn.btn-primary{'data-toggle' => 'modal', "data-target" => '#review-recipe-modal'} Review Recipe
+				%br
+
+= render 'dashboard/modal'

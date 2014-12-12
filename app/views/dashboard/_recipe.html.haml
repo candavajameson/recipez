@@ -1,0 +1,6 @@
+.col-sm-6.col-md-4
+	.thumbnail
+		= image_tag(recipe.avatar_url) 
+		.caption
+			%h3= link_to recipe.title, dashboard_path(recipe)
+			%p= recipe.desc

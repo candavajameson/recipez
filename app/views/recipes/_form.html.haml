@@ -1,0 +1,35 @@
+= form_for @recipe, html: { class: 'form-horizontal', multipart: true} do |f|
+	.row
+		.col-md-12
+			.form-group
+				= f.label :title, class: 'control-label'
+				.col-sm-8
+					= f.text_field :title, class: 'form-control'
+			.form-group
+				= f.label :desc, "Description" , class: 'control-label'
+				.col-sm-8
+					= f.text_area :desc, class: 'form-control'
+			.form-group
+				= f.label :ingredients, class: 'control-label'
+				.col-sm-8
+					= f.text_area :ingredients, class: 'form-control'
+			.form-group
+				= f.label :procedures, class: 'control-label'
+				.col-sm-8
+					= f.text_area :procedures, class: 'form-control'
+			.form-group
+				= f.label :category, class: 'control-label'
+				.col-sm-8
+					= f.collection_select(:category_id, Category.all, :id, :name, {}, { class: 'form-control' })
+			.form-group
+				= f.label :meal_type, class: 'control-label'
+				.col-sm-8
+					= f.select :meal_type, options_for_select(["Breakfast", "Lunch/Dinner", "Snack"], @recipe.meal_type),{ include_blank: false }, { class: 'form-control' }
+			.form-group
+				= f.label :avatar, class: 'control-label'
+				.col-sm-8
+					= image_tag @recipe.avatar_url(400), class: 'avatar s400', alt: @recipe.title
+					= f.file_field :avatar, class: 'form-control'
+	.form-actions
+		= f.submit "Save Recipe", class: "btn btn-save"
+	

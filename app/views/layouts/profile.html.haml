@@ -1,0 +1,15 @@
+!!! 5
+%html{ lang: "en" }
+%head
+	%title Recipez
+	= stylesheet_link_tag    "application", :media => "all"
+	= javascript_include_tag "application"
+	= csrf_meta_tags
+
+	%body
+		= render 'layouts/header'
+		%nav.main-nav.navbar-collapse.collapse
+			.container= render 'layouts/nav/profile'
+		.container
+			.content
+				= yield

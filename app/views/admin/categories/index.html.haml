@@ -1,0 +1,13 @@
+%h1 Categories
+
+%table.table.table-hover
+	%tr
+		%th Name
+		%th
+	- @categories.each do |category|
+		%tr
+			%td= category.name
+			%td
+
+%hr
+= paginate @categories 

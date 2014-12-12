@@ -1,0 +1,16 @@
+%h1 Users
+
+%table.table.table-hover
+	%tr
+		%th Name
+		%th Email
+		%th
+	- @users.each do |user|
+		%tr
+			%td= "#{user.first_name} #{user.last_name}"
+			%td= user.email
+			%td
+
+%hr
+= paginate @users
+

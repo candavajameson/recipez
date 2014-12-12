@@ -1,0 +1,24 @@
+#review-recipe-modal.modal.fade{ :title => "Review Recipe #{@recipe.title}",:tabindex => "-1", 'role' => 'dialog', "aria-labelledby" => "myModalLabel", "aria-hidden" => "true" }   
+
+	.modal-dialog
+	= form_for([@recipe,@recipe.reviews.build]) do |f|   
+		.modal-content    
+			.modal-header
+				%button.close{ "aria-hidden" => "true", "data-dismiss" => "modal" , :type => "button"} &times;
+				%h3.modal-title= @recipe.title
+			.modal-body
+				.modal-body-content
+					.row 
+						.col-md-12
+							.form-group
+								= f.label :title, class: 'control-label '
+								= f.text_field :title, class: 'form-control'
+							.form-group
+								= f.label :taste_rating, class: 'control-label' 
+								= rating_for @recipe, 'taste', :cancel => false
+							.form-group
+								= f.label :message, class: 'control-label'
+								= f.text_area :message, class: 'form-control col-sm-6'
+			.modal-footer
+				%button.btn{"data-dismiss" => "modal", :type => "button"} Close
+				%button.btn Save

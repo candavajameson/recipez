@@ -1,0 +1,6 @@
+%ul
+  = nav_link(path: 'profiles#show', html_options: {class: 'home'}) do
+    = link_to profile_path, title: "Profile" do
+      Profile
+  = nav_link(controller: :passwords) do
+    = link_to "Password", edit_profile_password_path

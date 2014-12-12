@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  desc: MyText
+  ingredients: MyText
+  procedures: MyText
+  category_id: 1
+  meal_type: 
+
+two:
+  title: MyString
+  desc: MyText
+  ingredients: MyText
+  procedures: MyText
+  category_id: 1
+  meal_type: 
