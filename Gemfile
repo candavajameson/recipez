@@ -28,7 +28,6 @@ gem "carrierwave"
 
 gem 'friendly_id', '~> 5.0.0'
 
-
 gem 'select2-rails'
 gem 'bootstrap-sass', '~> 3.0'
 gem "font-awesome-rails", '~> 4.2'
